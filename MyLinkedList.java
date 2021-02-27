@@ -1,4 +1,3 @@
-package LinkedList;
 public class MyLinkedList {
 
 	public INode head;
@@ -22,6 +21,18 @@ public class MyLinkedList {
 		}
 	}
 	
+	public void append(INode myNode) {
+		if(this.head == null) {
+			this.head = myNode;
+		}
+		if(this.tail == null) {
+			this.tail =myNode;
+		}else {
+			this.tail.setNext(myNode);
+			this.tail = myNode;
+		}
+	}
+
 	public void printMyNode() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
 		INode tempNode = head;
