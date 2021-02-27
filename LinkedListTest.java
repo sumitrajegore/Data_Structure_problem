@@ -5,7 +5,7 @@ public class LinkedListTest {
 
 	// Method to get three numbers when one node is linked with other key
 	@Test
-	public void given3NumbersWhenLinkedShouldPassLinkedListTest() { 
+	public void given3NumbersWhenLinkedShouldPassLinkedListTest() {
 
 		LinkedList<Integer> myFirstNode = new LinkedList<>(56);
 		LinkedList<Integer> mySecondNode = new LinkedList<>(30);
@@ -49,4 +49,22 @@ public class LinkedListTest {
 						 myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
+	
+	//Given 3 numbers when inserting in between should pass linked list test
+		@Test
+		public void given3NumbersWhenInsertingBetweenShouldPassLinkedListTest() { 
+
+			LinkedList<Integer> myFirstNode = new LinkedList<>(56);
+			LinkedList<Integer> mySecondNode = new LinkedList<>(30);
+			LinkedList<Integer> myThirdNode = new LinkedList<>(70);
+			MyLinkedList myLinkedList = new MyLinkedList();
+			myLinkedList.add(myFirstNode);
+			myLinkedList.append(myThirdNode);
+			myLinkedList.insert(myFirstNode,mySecondNode);
+			myLinkedList.printMyNode();
+			boolean result = myLinkedList.head.equals(myFirstNode) && 
+					 		 myLinkedList.head.getNext().equals(mySecondNode) &&
+					 		 myLinkedList.tail.equals(myThirdNode);
+			Assert.assertTrue(result);
+		}
 }
