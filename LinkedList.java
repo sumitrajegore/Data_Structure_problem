@@ -1,32 +1,32 @@
-package LinkedList;
-public class LinkedList<K> {
+public class LinkedList<K> implements INode<K> {
 
 	private K key;
-	private LinkedList next;
+	private LinkedList<K> next;
 
-	//Constructor Declaration
+	// Constructor Declaration
 	public LinkedList(K key) {
-		this.key = null;
+		this.key = key;
 		this.next = null;
 	}
 
-	//To get Key
+	@Override
 	public K getKey() {
 		return key;
 	}
 
-	//To set Key
+	@Override
 	public void setKey(K key) {
 		this.key = key;
 	}
 
-	//To get Next
-	public LinkedList getNext() {
+	@Override
+	public INode<K> getNext() {
 		return next;
 	}
 
-	//To set Next
-	public void setNext(LinkedList next) {
-		this.next = next;
-	}	
+	@Override
+	public void setNext(INode next) {
+		this.next = (LinkedList<K>) next;
+	}
+
 }
